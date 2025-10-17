@@ -1,5 +1,4 @@
 import * as marked from 'marked'
-import { useState } from "react";
 import "./App.css";
 import ImageCarousel from "./ImageCarousel";
 import Content from "./Content"
@@ -7,9 +6,7 @@ import showsMd from './content/auftritte.md?raw'
 import contactMd from './content/kontakt.md?raw'
 import clubMd from './content/verein.md?raw'
 import imprintMd from './content/imprint.md?raw'
-import ScrollLink from './BackToTop';
 import Nav from './Nav';
-import BackToTop from './BackToTop';
 
 const toSlug = title => title
   .toLowerCase()
@@ -76,7 +73,6 @@ export default function App() {
               .map(c => c.element)}
         </div>
       </main>
-      <BackToTop />
       <footer className="footer">
         © {new Date().getFullYear()}  All rights reserved
       </footer>
