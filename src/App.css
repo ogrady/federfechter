@@ -98,3 +98,12 @@
   border-bottom: 1px solid #bfa76f;
   padding: 0.5rem 0;
 }
+
+.imprint {
+  font-family: "Cinzel", serif;      /* keep historical / elegant theme */
+  font-size: 1.2rem;               /* slightly smaller than main text */
+  line-height: 0.5;                  /* regular line spacing for readability */
+  color: #555;                        /* muted text color */
+  max-width: 800px;                   /* avoid overly wide lines */
+  padding: 0 1rem;                    /* slight horizontal padding */
+}

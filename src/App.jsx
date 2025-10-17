@@ -54,6 +54,7 @@ const contents = [
     slug: 'imprint',
     title: 'Impressum',
     text: await marked.parse(imprintMd),
+    isContent: true,
     hasNavItem: true
   }),
 
