@@ -7,8 +7,9 @@ import showsMd from './content/auftritte.md?raw'
 import contactMd from './content/kontakt.md?raw'
 import clubMd from './content/verein.md?raw'
 import imprintMd from './content/imprint.md?raw'
-import ScrollLink from './ScrollLink';
+import ScrollLink from './BackToTop';
 import Nav from './Nav';
+import BackToTop from './BackToTop';
 
 const toSlug = title => title
   .toLowerCase()
@@ -16,14 +17,14 @@ const toSlug = title => title
   .join('-')
 
 const toContent = async meta => ({...meta,
-  element: <Content slug={toSlug(meta.title)} title={meta.title} content={meta.text}/>,
-  slug: toSlug(meta.title)
+  element: <Content  key={`content-${toSlug(meta.title)}`} slug={toSlug(meta.title)} title={meta.title} content={meta.text}/>,
+  slug: toSlug(meta.title),
 })
 
 const contents = [
   {
     title: '',
-    element: <ImageCarousel entries={[
+    element: <ImageCarousel key="carousel" entries={[
       { image: "banner2_0.jpg", caption: "\"Viribus Unitis\" ist der Leitspruch der Federfechter und prägt den Zusammenhalt des Vereins. Ausgebildet an so manchen Waffen begeistern wir Jung und Alt."},
       { image: "Duell_Schwert_2_0.jpg", caption: "Mit dem Katzbalger an die Gurgel – Die Basisausrüstung darf an keinem Landsknecht fehlen."},
       { image: "Lager_2_0.jpg", caption: "Ohne Mampf keinen Kampf! Ein Söldnertrupp sollte immer gut versorgt sein."}
@@ -65,7 +66,7 @@ export default function App() {
   return (
     <div className="app-container">
       <Nav children={contents.filter(c => c.hasNavItem).map(c=> (
-          <a href={`#${c.slug}`}>{c.title}</a>
+          <a key={c.slug} href={`#${c.slug}`}>{c.title}</a>
         ))}>
       </Nav>
       <main className="main-content">
@@ -75,6 +76,7 @@ export default function App() {
               .map(c => c.element)}
         </div>
       </main>
+      <BackToTop />
       <footer className="footer">
         © {new Date().getFullYear()}  All rights reserved
       </footer>

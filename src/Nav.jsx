@@ -9,7 +9,7 @@ export default function Nav({children}) {
   const childrenWithClose = children.map((child) =>
     child.type === "a"
         ? cloneElement(child, {
-            onClick: () => setOpen(false),
+            onClick: () => setOpen(false)
         })
         : child
   )
