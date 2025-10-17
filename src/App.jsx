@@ -14,7 +14,17 @@ const toContent = async meta => ({...meta,
 })
 
 const contents = [
-
+    {
+    slug: 'galerie',
+    title: '',
+    element: <ImageCarousel entries={[
+      { image: "banner2_0.jpg", caption: "\"Viribus Unitis\" ist der Leitspruch der Federfechter und prägt den Zusammenhalt des Vereins. Ausgebildet an so manchen Waffen begeistern wir Jung und Alt."},
+      { image: "Duell_Schwert_2_0.jpg", caption: "Mit dem Katzbalger an die Gurgel – Die Basisausrüstung darf an keinem Landsknecht fehlen."},
+      { image: "Lager_2_0.jpg", caption: "Ohne Mampf keinen Kampf! Ein Söldnertrupp sollte immer gut versorgt sein."}
+    ]}/>,
+    isContent: true,
+    hasNavItem: false
+  },
   await toContent(
   {
     slug: 'auftritte',
@@ -46,17 +56,7 @@ const contents = [
     text: await marked.parse(imprintMd),
     hasNavItem: true
   }),
-    {
-    slug: 'galerie',
-    title: '',
-    element: <ImageCarousel entries={[
-      { image: "banner2_0.jpg", caption: "\"Viribus Unitis\" ist der Leitspruch der Federfechter und prägt den Zusammenhalt des Vereins. Ausgebildet an so manchen Waffen begeistern wir Jung und Alt."},
-      { image: "Duell_Schwert_2_0.jpg", caption: "Mit dem Katzbalger an die Gurgel – Die Basisausrüstung darf an keinem Landsknecht fehlen."},
-      { image: "Lager_2_0.jpg", caption: "Ohne Mampf keinen Kampf! Ein Söldnertrupp sollte immer gut versorgt sein."}
-    ]}/>,
-    isContent: true,
-    hasNavItem: false
-  },
+
 ]
 
 export default function App() {
@@ -73,11 +73,9 @@ export default function App() {
 
       <main className="main-content">
         <div className="content-container">
-          <div className="content-text">
             {contents
               .filter(c => c.isContent)
               .map(c => c.element)}
-          </div>
         </div>
       </main>
 
