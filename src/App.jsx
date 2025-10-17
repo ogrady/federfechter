@@ -9,13 +9,18 @@ import clubMd from './content/verein.md?raw'
 import imprintMd from './content/imprint.md?raw'
 import ScrollLink from './ScrollLink';
 
+const toSlug = title => title
+  .toLowerCase()
+  .split(' ')
+  .join('-')
+
 const toContent = async meta => ({...meta,
- element: <Content slug={meta.slug} title={meta.title} content={meta.text}/>,
+  element: <Content slug={toSlug(meta.title)} title={meta.title} content={meta.text}/>,
+  slug: toSlug(meta.title)
 })
 
 const contents = [
-    {
-    slug: 'galerie',
+  {
     title: '',
     element: <ImageCarousel entries={[
       { image: "banner2_0.jpg", caption: "\"Viribus Unitis\" ist der Leitspruch der Federfechter und prägt den Zusammenhalt des Vereins. Ausgebildet an so manchen Waffen begeistern wir Jung und Alt."},
@@ -27,7 +32,6 @@ const contents = [
   },
   await toContent(
   {
-    slug: 'auftritte',
     title: 'Federfechter auf Ihrem Fest',
     text: await marked.parse(showsMd),
     isContent: true,
@@ -35,7 +39,6 @@ const contents = [
   }),
   await toContent(
   {
-    slug: 'verein',
     title: 'Der Verein',
     text: await marked.parse(clubMd),
     isContent: true,
@@ -43,7 +46,6 @@ const contents = [
   }),
   await toContent(
   {
-    slug: 'kontakt',
     title: 'Kontakt',
     text: await marked.parse(contactMd),
     isContent: true,
@@ -51,13 +53,11 @@ const contents = [
   }),
   await toContent(
   {
-    slug: 'imprint',
     title: 'Impressum',
     text: await marked.parse(imprintMd),
     isContent: true,
     hasNavItem: true
   }),
-
 ]
 
 export default function App() {
