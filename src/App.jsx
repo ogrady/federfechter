@@ -8,6 +8,7 @@ import contactMd from './content/kontakt.md?raw'
 import clubMd from './content/verein.md?raw'
 import imprintMd from './content/imprint.md?raw'
 import ScrollLink from './ScrollLink';
+import Nav from './Nav';
 
 const toSlug = title => title
   .toLowerCase()
@@ -63,15 +64,10 @@ const contents = [
 export default function App() {
   return (
     <div className="app-container">
-      <nav className="nav">
-        <div className="logo"><a href="/"><img src="logo.png"></img></a></div>
-        <div className="menu">
-          {contents.filter(c => c.hasNavItem).map(c=> (
-            <ScrollLink slug={c.slug} offset={64}>{c.title}</ScrollLink>
-          ))}
-        </div>
-      </nav>
-
+      <Nav children={contents.filter(c => c.hasNavItem).map(c=> (
+          <a href={`#${c.slug}`}>{c.title}</a>
+        ))}>
+      </Nav>
       <main className="main-content">
         <div className="content-container">
             {contents
@@ -79,7 +75,6 @@ export default function App() {
               .map(c => c.element)}
         </div>
       </main>
-
       <footer className="footer">
         © {new Date().getFullYear()}  All rights reserved
       </footer>

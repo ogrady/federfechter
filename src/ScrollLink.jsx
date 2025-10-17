@@ -6,16 +6,9 @@ function scrollToSection(id, offset = 0) {
     }
 }
 
-export default function ScrollLink({ slug, children, offset = 0 }) {
-  const handleClick = (e) => {
-    return
-    e.preventDefault(); // prevent default jump
-    scrollToSection(slug, offset);
-    history.replaceState(null, "", `#${slug}`); // optional: update URL hash
-  };
-
+export default function ScrollLink({ slug, children }) {
   return (
-    <a href={`#${slug}`} onClick={handleClick}>
+    <a href={`#${slug}`}>
       {children}
     </a>
   );

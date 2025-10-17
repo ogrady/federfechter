@@ -1,0 +1,79 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #2c2a26;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.nav {
+  position: relative;  /* or fixed if you want it to stay at top */
+  z-index: 1000;       /* higher than main content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #2c2a26;
+}
+
+/* Menu links */
+.nav .menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav .menu a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
+/* Burger menu (hidden on large screens) */
+.nav .burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.nav .burger div {
+  width: 25px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #595959;
+}
+
+/* Responsive: hide menu, show burger on small screens */
+@media (max-width: 768px) {
+  .nav .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #2c2b28;
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  .nav .menu.open {
+    display: flex;
+  }
+
+  .nav .burger {
+    display: flex;
+  }
+}
