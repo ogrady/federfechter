@@ -30,10 +30,26 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
+h1 a {
   line-height: 1.1;
+  display: inline-block;
+  font-family: "Cinzel", serif; /* elegant serif with a historical touch */
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: #2c2a26; /* dark ink-like tone */
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 0.2em;
+  margin: 1.5em 0 1em;
+  border-bottom: 2px solid #bfa76f; /* subtle gold underline */
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
+
+h1 a:hover {
+  color: #6b4b2c;          /* warm brown hover */
+  border-color: #8c6d3a;   /* darker gold-brown */
+}
+
 
 button {
   border-radius: 8px;
@@ -55,6 +71,7 @@ button:focus-visible {
 }
 
 img {
+  border-radius: 1%;
   display: block;           /* removes inline gap */
   margin: 0 auto;           /* centers horizontally */
   max-width: 100%;          /* responsive width */

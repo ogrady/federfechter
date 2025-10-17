@@ -5,5 +5,3 @@ In den Fechtvorstellungen, welche in einer historischen Rahmenhandlung eines ca.
 Wir vermitteln die Philosophie des Fechtens auf historischen Festen, Märkten und anderen Veranstaltungen, auf freien Plätzen, Bühnen oder auch auf eng begrenztem Raum.Kostüme, Waffen, Rüstungen, Zelte, und Lagerausstattung der Gruppe sind weitestgehend an die überlieferten Originale der dargestellten Epoche angelehnt.
 
 Fahnenschwinger und Trommler bilden den entsprechenden Rahmen für die Darbietung von Duellen und szenischen Inszenierungen mit bis zu 8 gleichzeitig aktiven Fechtern.
-
-<ImageCarousel images={images} />

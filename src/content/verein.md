@@ -1,7 +1,7 @@
 ![Duell mit Schwertern](Gruppe_Banner_1.jpg)
 
 
-## Viribus Unitis. Mit vereinten Kräften.
+<span class="motto">Viribus Unitis. Mit vereinten Kräften.</span>
 
 Unser Name und Motto leiten sich von der gleichnamigen, im 16. Jahrhundert gegründeten Fechtzunft unter dem Namen der Federfechter ab. Im Vordergrund unserer Aktivität stehen daher seit 1996 die Ausbildung sowie die Vorführungen von Schaukampftechniken eng angelehnt an Fechttechniken der damaligen Zeit.
 

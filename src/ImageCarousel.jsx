@@ -2,15 +2,15 @@ import { useState } from "react";
 import "./ImageCarousel.css";
 
 
-export default function ImageCarousel({ images }) {
+export default function ImageCarousel({ entries }) {
   const [current, setCurrent] = useState(0);
-  const prev = () => setCurrent((current - 1 + images.length) % images.length)
-  const next = () => setCurrent((current + 1) % images.length)
+  const prev = () => setCurrent((current - 1 + entries.length) % entries.length)
+  const next = () => setCurrent((current + 1) % entries.length)
 
   return (
     <div className="carousel">
       <img
-        src={images[current]}
+        src={entries[current].image}
         alt={`Slide ${current}`}
         style={{ width: "100%", display: "block", objectFit: "cover" }}
       />
@@ -33,7 +33,7 @@ export default function ImageCarousel({ images }) {
         ›
       </button>
       <div className="dots">
-        {images.map((_, idx) => (
+        {entries.map((_, idx) => (
           <div
             key={idx}
             onClick={() => setCurrent(idx)}
@@ -46,7 +46,7 @@ export default function ImageCarousel({ images }) {
           />
         ))}
       </div>
-      <div class="caption">asdasdasd</div>
+      <div className="caption">{entries[current].caption}</div>
     </div>
   );
 }
